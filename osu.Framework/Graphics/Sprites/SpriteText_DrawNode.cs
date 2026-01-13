@@ -80,7 +80,7 @@ namespace osu.Framework.Graphics.Sprites
                         parts[i].Texture,
                         parts[i].DrawQuad,
                         // If the character has a coloured texture, use white colour to preserve the original texture colour.
-                        parts[i].Coloured ? Colour4.White : DrawColourInfo.Colour,
+                        parts[i].Coloured ? new Color4(Colour4.White.R, Colour4.White.G, Colour4.White.B, DrawColourInfo.Colour.AverageColour.Alpha) : DrawColourInfo.Colour,
                         inflationPercentage: parts[i].InflationPercentage);
                 }
 
