@@ -295,7 +295,7 @@ namespace osu.Framework.Graphics.Textures
         /// <summary>
         /// Flush any unprocessed uploads without actually uploading.
         /// </summary>
-        internal void FlushUploads() => NativeTexture.FlushUploads();
+        public void FlushUploads() => NativeTexture.FlushUploads();
 
         /// <summary>
         /// Whether this <see cref="Texture"/> shares the same native texture backing as another.
