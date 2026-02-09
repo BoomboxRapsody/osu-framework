@@ -23,7 +23,26 @@ namespace osu.Framework.Graphics.Video
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 var current = Environment.CurrentDirectory;
-                var probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "x64" : "x86");
+                var probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "windows-x64" : "windows-x86");
+
+                while (current != null)
+                {
+                    var ffmpegBinaryPath = Path.Combine(current, probe);
+
+                    if (Directory.Exists(ffmpegBinaryPath))
+                    {
+                        Console.WriteLine($"FFmpeg binaries found in: {ffmpegBinaryPath}");
+                        ffmpeg.RootPath = ffmpegBinaryPath;
+                        return;
+                    }
+
+                    current = Directory.GetParent(current)?.FullName;
+                }
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                var current = Environment.CurrentDirectory;
+                var probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "linux-x64" : "linux-x86");
 
                 while (current != null)
                 {
