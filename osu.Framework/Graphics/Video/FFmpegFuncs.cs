@@ -22,12 +22,12 @@ namespace osu.Framework.Graphics.Video
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                var current = Environment.CurrentDirectory;
-                var probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "windows-x64" : "windows-x86");
+                string current = Environment.CurrentDirectory;
+                string probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "windows-x64" : "windows-x86");
 
                 while (current != null)
                 {
-                    var ffmpegBinaryPath = Path.Combine(current, probe);
+                    string ffmpegBinaryPath = Path.Combine(current, probe);
 
                     if (Directory.Exists(ffmpegBinaryPath))
                     {
@@ -41,12 +41,12 @@ namespace osu.Framework.Graphics.Video
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                var current = Environment.CurrentDirectory;
-                var probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "linux-x64" : "linux-x86");
+                string current = Environment.CurrentDirectory;
+                string probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "linux-x64" : "linux-x86");
 
                 while (current != null)
                 {
-                    var ffmpegBinaryPath = Path.Combine(current, probe);
+                    string ffmpegBinaryPath = Path.Combine(current, probe);
 
                     if (Directory.Exists(ffmpegBinaryPath))
                     {
