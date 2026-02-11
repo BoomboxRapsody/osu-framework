@@ -23,7 +23,7 @@ namespace osu.Framework.Graphics.Video
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 string current = Environment.CurrentDirectory;
-                string probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "windows-x64" : "windows-x86");
+                string probe = Path.Combine("FFmpeg", Environment.Is64BitProcess ? "windows-x64-fix" : "windows-x86-fix");
 
                 while (current != null)
                 {
