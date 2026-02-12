@@ -18,9 +18,6 @@
     <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
     <PackageTags>osu game framework</PackageTags>
   </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="resources\fonts\roboto\OFL.txt" />
-  </ItemGroup>
   <ItemGroup Label="Package References">
     <PackageReference Include="managed-midi" Version="1.10.1" />
     <PackageReference Include="FFmpeg.AutoGen" Version="7.0.0" />
