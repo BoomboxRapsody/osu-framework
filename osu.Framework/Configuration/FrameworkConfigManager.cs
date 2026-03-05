@@ -43,6 +43,7 @@ namespace osu.Framework.Configuration
             SetDefault(FrameworkSetting.WindowMode, WindowMode.Windowed);
             SetDefault(FrameworkSetting.Renderer, RendererType.Automatic);
             SetDefault(FrameworkSetting.ShowUnicode, false);
+            SetDefault(FrameworkSetting.UseExperimentalSDL3, false);
             SetDefault(FrameworkSetting.Locale, string.Empty);
 
 #pragma warning disable 618
@@ -116,5 +117,7 @@ namespace osu.Framework.Configuration
 
         [Obsolete("Input-related settings are now stored in InputConfigManager. Adjustments should be made via Host.AvailableInputHandlers bindables directly.")] // can be removed 20210911
         MapAbsoluteInputToWindow,
+
+        UseExperimentalSDL3,
     }
 }
