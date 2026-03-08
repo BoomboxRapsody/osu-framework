@@ -14,6 +14,7 @@ using osu.Framework.Input.Handlers;
 using osu.Framework.Input.Handlers.Mouse;
 using osu.Framework.IO.Stores;
 using osu.Framework.Logging;
+using osu.Framework.Platform.Linux;
 using osu.Framework.Platform.MacOS.Native;
 
 namespace osu.Framework.Platform.MacOS
@@ -25,10 +26,14 @@ namespace osu.Framework.Platform.MacOS
         {
         }
 
+        /*
         protected override IWindow CreateWindow(GraphicsSurfaceType preferredSurface)
             => FrameworkEnvironment.UseSDL3 || Config.Get<bool>(Configuration.FrameworkSetting.UseExperimentalSDL3)
                 ? new SDL3MacOSWindow(preferredSurface, Options.FriendlyGameName)
                 : new SDL2MacOSWindow(preferredSurface, Options.FriendlyGameName);
+        */
+
+        protected override IWindow CreateWindow(GraphicsSurfaceType preferredSurface) => new SDL3MacOSWindow(preferredSurface, Options.FriendlyGameName);
 
         public override IEnumerable<string> UserStoragePaths
         {
